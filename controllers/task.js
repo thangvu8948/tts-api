@@ -6,7 +6,7 @@ module.exports = {
   post: (req, res) => {
     const data = JSON.parse(JSON.stringify(req.body));
     console.log(data);
-    let sql = `INSERT INTO SCORE (Name, Email, ScoreF, ScoreT) VALUES ('${data.name}, ${data.email}', ${data.score1}, ${data.score2})`;
+    let sql = `INSERT INTO SCORE (Name, Email, ScoreF, ScoreT) VALUES ('${data.name}', '${data.email}', ${data.score1}, ${data.score2})`;
     db.query(sql, (err, response) => {
       if (err) throw err;
       res.json(response);
